@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": false,
+    "noEmit": false,
+    "rootDir": "src",
+    "isolatedModules": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": [
+    "**/__tests__/**",
+    "**/*.test.tsx",
+    "**/*.stories.tsx",
+    "vite.config.ts"
+  ],
+  "include": ["src/**/*"]
+}
