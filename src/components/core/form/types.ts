@@ -7,6 +7,7 @@ import type {
 import type { InputProps } from '../../ui/input';
 import type { TextareaProps } from '../../ui/textarea';
 import type { DayPickerProps } from 'react-day-picker';
+import type { CheckboxProps } from '@radix-ui/react-checkbox';
 
 interface IFieldProps {
   field: ControllerRenderProps<any, any>;
@@ -30,4 +31,10 @@ export interface FormDatePickerProps extends IFieldProps {
   icon?: React.ReactNode;
   className?: string;
   calendarProps?: DayPickerProps;
+}
+
+export interface FormCheckboxProps extends IFieldProps, CheckboxProps {
+  icon?: React.ReactNode;
+  labelClassName?: string;
+  isBoxed?: boolean;
 }
