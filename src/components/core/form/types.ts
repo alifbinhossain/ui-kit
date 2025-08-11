@@ -11,6 +11,8 @@ import type { CheckboxProps } from '@radix-ui/react-checkbox';
 import type { RadioGroupProps } from '@radix-ui/react-radio-group';
 import type { IFormSelectOption } from '../../../types';
 
+import * as SelectPrimitive from '@radix-ui/react-select';
+
 interface IFieldProps {
   field: ControllerRenderProps<any, any>;
   fieldState: ControllerFieldState;
@@ -43,4 +45,13 @@ export interface FormCheckboxProps extends IFieldProps, CheckboxProps {
 
 export interface FormRadioProps extends IFieldProps, RadioGroupProps {
   options: IFormSelectOption[];
+}
+
+export interface FormSelectProps
+  extends IFieldProps,
+    React.ComponentProps<typeof SelectPrimitive.Root> {
+  options: IFormSelectOption[];
+  valueType?: 'string' | 'number';
+  isDisabled?: boolean;
+  isLoading?: boolean;
 }
