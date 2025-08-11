@@ -6,6 +6,7 @@ import Checkbox from './checkbox';
 import Radio from './radio';
 import Select from './select';
 import MultiSelect from './multi-select';
+import ReactSelect from './react-select';
 
 const Form = {
   Input,
@@ -16,6 +17,7 @@ const Form = {
   Radio,
   Select,
   MultiSelect,
+  ReactSelect,
 };
 
 export default Form;

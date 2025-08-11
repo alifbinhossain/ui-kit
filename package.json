@@ -78,12 +78,15 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "glob": "^11.0.3",
+    "lodash": "^4.17.21",
     "react-day-picker": "^9.8.1",
+    "react-select": "^5.10.2",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "@tailwindcss/vite": "^4.1.11",
+    "@types/lodash": "^4.17.20",
     "@types/node": "^24.2.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",

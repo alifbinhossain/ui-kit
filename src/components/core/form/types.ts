@@ -60,3 +60,16 @@ export interface FormMultiSelectProps extends IFieldProps {
   isDisabled?: boolean;
   options: IFormSelectOption[];
 }
+
+export interface FormReactSelectProps extends IFieldProps {
+  options: IFormSelectOption[];
+  unique?: boolean;
+  excludeOptions?: string[];
+  isMulti?: boolean;
+  menuPortalTarget?: any;
+  valueType?: 'string' | 'number';
+  isDisabled?: boolean;
+  value?: any;
+  isLoading?: boolean;
+  onChange?: (option?: any, field?: any) => void;
+}
