@@ -1,6 +1,11 @@
 {
-  "name": "ui-kit",
-  "private": true,
+  "name": "synap-kit",
+  "description": "A UI component library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alifbinhossain/ui-kit.git"
+  },
+  "private": false,
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/es/index.js",
