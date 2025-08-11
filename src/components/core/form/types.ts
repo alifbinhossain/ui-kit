@@ -8,6 +8,8 @@ import type { InputProps } from '../../ui/input';
 import type { TextareaProps } from '../../ui/textarea';
 import type { DayPickerProps } from 'react-day-picker';
 import type { CheckboxProps } from '@radix-ui/react-checkbox';
+import type { RadioGroupProps } from '@radix-ui/react-radio-group';
+import type { IFormSelectOption } from '../../../types';
 
 interface IFieldProps {
   field: ControllerRenderProps<any, any>;
@@ -37,4 +39,8 @@ export interface FormCheckboxProps extends IFieldProps, CheckboxProps {
   icon?: React.ReactNode;
   labelClassName?: string;
   isBoxed?: boolean;
+}
+
+export interface FormRadioProps extends IFieldProps, RadioGroupProps {
+  options: IFormSelectOption[];
 }
