@@ -30,11 +30,36 @@ export default defineConfig({
         // The main 'index' entry point, which will be the barrel export for the library.
         // It will also be responsible for importing the main CSS file.
         index: path.resolve(__dirname, 'src/index.ts'),
+        form: path.resolve(__dirname, 'src/components/core/form/index.ts'),
         // Use glob to find all other components as separate entry points.
         // This ensures deep imports are possible (e.g., `import { Button } from 'my-lib/components/ui/button'`).
         ...Object.fromEntries(
           glob
             .sync('src/components/ui/**/*.tsx')
+            .map((file) => [
+              path.relative(
+                'src',
+                file.slice(0, file.length - path.extname(file).length)
+              ),
+              file,
+            ])
+        ),
+
+        ...Object.fromEntries(
+          glob
+            .sync('src/hooks/**/*.ts')
+            .map((file) => [
+              path.relative(
+                'src',
+                file.slice(0, file.length - path.extname(file).length)
+              ),
+              file,
+            ])
+        ),
+
+        ...Object.fromEntries(
+          glob
+            .sync('src/utils/**/*.ts')
             .map((file) => [
               path.relative(
                 'src',
@@ -50,18 +75,50 @@ export default defineConfig({
       //   components: resolve(__dirname, 'src/components/index.ts'),
       // },
       formats: ['es'],
-      fileName: (format, entryName) => `${entryName}.js`,
-      cssFileName: 'style', // Output CSS file name
+      // fileName: (format, entryName) => `${entryName}.js`,
+      // cssFileName: 'style', // Output CSS file name
     },
     rollupOptions: {
       // Externalize peer dependencies to avoid bundling them.
-      external: ['react', 'react-dom'],
+      external: [
+        'react',
+        'react-dom',
+        '@tanstack/react-query',
+        'react-hook-form',
+        'axios',
+        '@hookform/devtools',
+        '@tanstack/eslint-plugin-query',
+        '@headlessui/react',
+        'lucide-react',
+        'framer-motion',
+        'react-hotkeys-hook',
+        'date-fns',
+        'zod',
+      ],
       output: {
         preserveModules: true,
+        entryFileNames: `[name].js`,
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'index.css') {
+            return `style.css`;
+          }
+          return `style.css`;
+        },
         // Provide global variables for these external dependencies.
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          '@tanstack/react-query': 'ReactQuery',
+          'react-hook-form': 'ReactHookForm',
+          axios: 'axios',
+          '@hookform/devtools': 'ReactHookFormDevTools',
+          '@tanstack/eslint-plugin-query': 'ReactQueryESLintPlugin',
+          '@headlessui/react': 'HeadlessUIReact',
+          'lucide-react': 'LucideReact',
+          'framer-motion': 'FramerMotion',
+          'react-hotkeys-hook': 'ReactHotkeysHook',
+          'date-fns': 'dateFns',
+          zod: 'zod',
         },
       },
     },
