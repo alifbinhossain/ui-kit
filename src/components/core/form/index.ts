@@ -5,6 +5,7 @@ import DatePicker from './date-picker';
 import Checkbox from './checkbox';
 import Radio from './radio';
 import Select from './select';
+import MultiSelect from './multi-select';
 
 const Form = {
   Input,
@@ -14,6 +15,7 @@ const Form = {
   DatePicker,
   Radio,
   Select,
+  MultiSelect,
 };
 
 export default Form;

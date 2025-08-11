@@ -55,3 +55,8 @@ export interface FormSelectProps
   isDisabled?: boolean;
   isLoading?: boolean;
 }
+
+export interface FormMultiSelectProps extends IFieldProps {
+  isDisabled?: boolean;
+  options: IFormSelectOption[];
+}
