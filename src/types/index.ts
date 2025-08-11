@@ -10,3 +10,8 @@ export type IToast = {
     | string;
   message: string;
 };
+
+export type IStartEndDateProps = {
+  start_date: Date | undefined;
+  end_date: Date | undefined;
+};

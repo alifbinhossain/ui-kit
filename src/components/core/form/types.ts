@@ -6,6 +6,7 @@ import type {
 
 import type { InputProps } from '../../ui/input';
 import type { TextareaProps } from '../../ui/textarea';
+import type { DayPickerProps } from 'react-day-picker';
 
 interface IFieldProps {
   field: ControllerRenderProps<any, any>;
@@ -24,3 +25,9 @@ export interface FormInputProps extends IFieldProps, InputProps {
 }
 
 export interface FormTextareaProps extends IFieldProps, TextareaProps {}
+
+export interface FormDatePickerProps extends IFieldProps {
+  icon?: React.ReactNode;
+  className?: string;
+  calendarProps?: DayPickerProps;
+}
