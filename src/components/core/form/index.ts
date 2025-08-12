@@ -14,6 +14,9 @@ import AddEditWrapper from './add-edit-wrapper';
 import FileUpload from './file-upload';
 import RichTextEditor from './rich-text-editor';
 import Switch from './switch';
+import Otp from './otp';
+import Gender from './gender';
+import Phone from './phone';
 
 const Form = {
   Input,
@@ -32,6 +35,9 @@ const Form = {
   FileUpload,
   RichTextEditor,
   Switch,
+  Otp,
+  Gender,
+  Phone,
 };
 
 export default Form;

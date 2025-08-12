@@ -16,9 +16,7 @@ import type { FormTextareaProps } from '../types';
 const FormTextarea: React.FC<FormTextareaProps> = ({
   field,
   label,
-  placeholder = 'Write here',
   optional = false,
-  className,
   disableLabel,
 }) => {
   return (

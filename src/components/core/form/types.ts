@@ -14,6 +14,7 @@ import type { IFormSelectOption } from '../../../types';
 
 import * as SelectPrimitive from '@radix-ui/react-select';
 import type { DropzoneOptions } from 'react-dropzone';
+import type { OTPInputProps } from 'input-otp';
 
 interface IFieldProps {
   field: ControllerRenderProps<any, any>;
@@ -120,3 +121,14 @@ export interface FormSwitchProps extends IFieldProps, CheckboxProps {
   labelClassName?: string;
   isBoxed?: boolean;
 }
+
+export type FormOtpProps = Omit<OTPInputProps, 'children'> & {
+  field: ControllerRenderProps<any, any>;
+  label?: string;
+  subLabel?: string;
+  placeholder?: string;
+  optional?: boolean;
+  disableLabel?: boolean;
+  disabled?: boolean;
+  labelClassName?: string;
+};
