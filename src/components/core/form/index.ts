@@ -9,12 +9,14 @@ import MultiSelect from './multi-select';
 import ReactSelect from './react-select';
 import Section from './section';
 import JoinInputUnit from './join-input-unit';
+import JoinInputSelect from './join-input-select';
+import AddEditWrapper from './add-edit-wrapper';
+import FileUpload from './file-upload';
 
 const Form = {
   Input,
   Textarea,
   Submit,
-  JoinInputUnit,
   Section,
   Checkbox,
   DatePicker,
@@ -22,6 +24,10 @@ const Form = {
   Select,
   MultiSelect,
   ReactSelect,
+  JoinInputUnit,
+  JoinInputSelect,
+  AddEditWrapper,
+  FileUpload,
 };
 
 export default Form;

@@ -1,6 +1,7 @@
 import type {
   ControllerFieldState,
   ControllerRenderProps,
+  UseFormReturn,
   UseFormStateReturn,
 } from 'react-hook-form';
 
@@ -12,6 +13,7 @@ import type { RadioGroupProps } from '@radix-ui/react-radio-group';
 import type { IFormSelectOption } from '../../../types';
 
 import * as SelectPrimitive from '@radix-ui/react-select';
+import type { DropzoneOptions } from 'react-dropzone';
 
 interface IFieldProps {
   field: ControllerRenderProps<any, any>;
@@ -84,4 +86,31 @@ export interface IFormSectionProps {
 export interface FormJoinInputUnitProps extends IFieldProps, InputProps {
   icon?: React.ReactNode;
   unit: string;
+}
+
+export interface FormJoinInputSelectProps extends IFieldProps, InputProps {
+  icon?: React.ReactNode;
+  selectField: {
+    name: string;
+    options: IFormSelectOption[];
+    isDisabled?: boolean;
+  };
+}
+
+export interface IFormAddEditWrapperProps {
+  children: React.ReactNode;
+  form: UseFormReturn<any, any, undefined>;
+  onSubmit(values: any): void;
+  title?: string;
+  isSubmitDisable?: boolean;
+}
+
+export interface FormFileUploadProps extends IFieldProps, InputProps {
+  imageBaseUrl: string;
+  options?: DropzoneOptions;
+  isUpdate?: boolean;
+  fileType?: 'image' | 'document' | 'all' | 'video' | 'audio';
+  errorText?: string;
+  small?: boolean;
+  previewClassName?: string;
 }

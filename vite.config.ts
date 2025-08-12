@@ -94,6 +94,7 @@ export default defineConfig({
         'react-hotkeys-hook',
         'date-fns',
         'zod',
+        'react-dropzone',
       ],
       output: {
         preserveModules: true,
@@ -119,6 +120,7 @@ export default defineConfig({
           'react-hotkeys-hook': 'ReactHotkeysHook',
           'date-fns': 'dateFns',
           zod: 'zod',
+          'react-dropzone': 'ReactDropzone',
         },
       },
     },
