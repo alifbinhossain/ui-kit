@@ -6,6 +6,8 @@ import path from 'path';
 import dts from 'vite-plugin-dts';
 import { glob } from 'glob';
 
+import { visualizer } from 'rollup-plugin-visualizer';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -13,6 +15,11 @@ export default defineConfig({
     tailwindcss(),
     dts({
       insertTypesEntry: true,
+    }),
+
+    visualizer({
+      filename: 'bundle-stats.html', // Output file for the analysis
+      open: true, // Automatically open the report in the browser after build
     }),
   ],
   resolve: {
@@ -24,6 +31,7 @@ export default defineConfig({
     outDir: 'dist',
     cssCodeSplit: false,
     cssMinify: true,
+    sourcemap: true,
     lib: {
       // Library mode entry point.
       entry: {
@@ -87,7 +95,6 @@ export default defineConfig({
         'react-hook-form',
         'axios',
         '@hookform/devtools',
-        '@tanstack/eslint-plugin-query',
         '@headlessui/react',
         'lucide-react',
         'framer-motion',
@@ -103,10 +110,10 @@ export default defineConfig({
         preserveModules: true,
         entryFileNames: `[name].js`,
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'index.css') {
-            return `style.css`;
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'style.css'; // You can still bundle main styles if needed
           }
-          return `style.css`;
+          return 'assets/[name]-[hash][extname]';
         },
         // Provide global variables for these external dependencies.
         globals: {
@@ -116,7 +123,6 @@ export default defineConfig({
           'react-hook-form': 'ReactHookForm',
           axios: 'axios',
           '@hookform/devtools': 'ReactHookFormDevTools',
-          '@tanstack/eslint-plugin-query': 'ReactQueryESLintPlugin',
           '@headlessui/react': 'HeadlessUIReact',
           'lucide-react': 'LucideReact',
           'framer-motion': 'FramerMotion',
@@ -130,7 +136,6 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: false,
     emptyOutDir: true,
   },
 });
