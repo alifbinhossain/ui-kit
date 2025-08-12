@@ -80,3 +80,8 @@ export interface IFormSectionProps {
   className?: string;
   extraHeader?: React.ReactNode;
 }
+
+export interface FormJoinInputUnitProps extends IFieldProps, InputProps {
+  icon?: React.ReactNode;
+  unit: string;
+}

@@ -8,11 +8,13 @@ import Select from './select';
 import MultiSelect from './multi-select';
 import ReactSelect from './react-select';
 import Section from './section';
+import JoinInputUnit from './join-input-unit';
 
 const Form = {
   Input,
   Textarea,
   Submit,
+  JoinInputUnit,
   Section,
   Checkbox,
   DatePicker,
