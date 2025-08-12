@@ -27,7 +27,7 @@ const FormFileUpload: React.FC<FormFileUploadProps> = ({
   isUpdate,
   fileType = 'image',
   errorText = 'Image must be less than 1MB and of type png, jpg, or jpeg',
-  imageBaseUrl,
+  baseUrl,
 }) => {
   const form = useFormContext();
 
@@ -77,10 +77,10 @@ const FormFileUpload: React.FC<FormFileUploadProps> = ({
   useEffect(() => {
     if (isUpdate) {
       if (field.value) {
-        setPreview(imageBaseUrl + field.value);
+        setPreview(baseUrl + field.value);
       }
     }
-  }, [isUpdate, field.value, imageBaseUrl]);
+  }, [isUpdate, field.value, baseUrl]);
 
   const { getRootProps, getInputProps, fileRejections, inputRef } = useDropzone(
     {

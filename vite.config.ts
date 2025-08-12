@@ -95,6 +95,8 @@ export default defineConfig({
         'date-fns',
         'zod',
         'react-dropzone',
+        'handsontable',
+        '@handsontable/react',
       ],
       output: {
         preserveModules: true,
@@ -121,6 +123,8 @@ export default defineConfig({
           'date-fns': 'dateFns',
           zod: 'zod',
           'react-dropzone': 'ReactDropzone',
+          handsontable: 'Handsontable',
+          '@handsontable/react': 'HandsontableReact',
         },
       },
     },

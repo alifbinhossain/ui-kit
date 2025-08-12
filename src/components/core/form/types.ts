@@ -111,7 +111,7 @@ export interface IFormAddEditWrapperProps {
 }
 
 export interface FormFileUploadProps extends IFieldProps, InputProps {
-  imageBaseUrl: string;
+  baseUrl: string;
   options?: DropzoneOptions;
   isUpdate?: boolean;
   fileType?: 'image' | 'document' | 'all' | 'video' | 'audio';

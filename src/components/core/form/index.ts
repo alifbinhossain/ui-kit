@@ -21,6 +21,7 @@ import ReactSelectCreate from './react-select-create';
 import DateTimePicker from './date-time-picker';
 import ID from './id';
 import TimePicker from './time-picker';
+import DynamicFields from './dynamic-fields';
 
 const Form = {
   Input,
@@ -46,6 +47,7 @@ const Form = {
   DateTimePicker,
   ID,
   TimePicker,
+  DynamicFields,
 };
 
 export default Form;
