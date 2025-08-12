@@ -12,6 +12,7 @@ import JoinInputUnit from './join-input-unit';
 import JoinInputSelect from './join-input-select';
 import AddEditWrapper from './add-edit-wrapper';
 import FileUpload from './file-upload';
+import RichTextEditor from './rich-text-editor';
 
 const Form = {
   Input,
@@ -28,6 +29,7 @@ const Form = {
   JoinInputSelect,
   AddEditWrapper,
   FileUpload,
+  RichTextEditor,
 };
 
 export default Form;
