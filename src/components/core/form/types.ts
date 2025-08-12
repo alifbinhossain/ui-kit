@@ -114,3 +114,9 @@ export interface FormFileUploadProps extends IFieldProps, InputProps {
   small?: boolean;
   previewClassName?: string;
 }
+
+export interface FormSwitchProps extends IFieldProps, CheckboxProps {
+  icon?: React.ReactNode;
+  labelClassName?: string;
+  isBoxed?: boolean;
+}
