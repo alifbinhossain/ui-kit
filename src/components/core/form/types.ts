@@ -10,12 +10,16 @@ import type { TextareaProps } from '../../ui/textarea';
 import type { DayPickerProps } from 'react-day-picker';
 import type { CheckboxProps } from '@radix-ui/react-checkbox';
 import type { RadioGroupProps } from '@radix-ui/react-radio-group';
-import type { IFormSelectOption } from '../../../types';
 
 import * as SelectPrimitive from '@radix-ui/react-select';
 import type { DropzoneOptions } from 'react-dropzone';
 import type { OTPInputProps } from 'input-otp';
 
+export interface IFormSelectOption {
+  label: string | number;
+  value: string | number;
+  unit?: string;
+}
 interface IFieldProps {
   field: ControllerRenderProps<any, any>;
   fieldState: ControllerFieldState;

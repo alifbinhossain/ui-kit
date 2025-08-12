@@ -9,8 +9,7 @@ import {
 import ReactSelect from '@/components/ui/react-select';
 import { Skeleton } from '@/components/ui/skeleton';
 
-import type { FormReactSelectProps } from './types';
-import type { IFormSelectOption } from '@/types';
+import type { FormReactSelectProps, IFormSelectOption } from './types';
 
 const FormReactSelect: React.FC<FormReactSelectProps> = ({
   field,

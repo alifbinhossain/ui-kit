@@ -8,8 +8,7 @@ import {
 } from '@/components/ui/form';
 import ReactSelectCreatable from '@/components/ui/react-select/react-select-creatable';
 
-import type { FormReactSelectProps } from './types';
-import type { IFormSelectOption } from '@/types';
+import type { FormReactSelectProps, IFormSelectOption } from './types';
 
 const FormReactSelectCreate: React.FC<FormReactSelectProps> = ({
   field,

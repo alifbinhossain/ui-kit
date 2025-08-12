@@ -20,6 +20,7 @@ import Phone from './phone';
 import ReactSelectCreate from './react-select-create';
 import DateTimePicker from './date-time-picker';
 import ID from './id';
+import TimePicker from './time-picker';
 
 const Form = {
   Input,
@@ -44,6 +45,7 @@ const Form = {
   ReactSelectCreate,
   DateTimePicker,
   ID,
+  TimePicker,
 };
 
 export default Form;

@@ -1,6 +1,5 @@
 import FormSelect from './select';
-import type { IFormSelectOption } from '@/types';
-import type { FormSelectProps } from './types';
+import type { FormSelectProps, IFormSelectOption } from './types';
 
 const FormGender: React.FC<Omit<FormSelectProps, 'options'>> = ({
   ...props
