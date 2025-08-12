@@ -132,3 +132,9 @@ export type FormOtpProps = Omit<OTPInputProps, 'children'> & {
   disabled?: boolean;
   labelClassName?: string;
 };
+
+export interface FormDatePickerProps extends IFieldProps {
+  icon?: React.ReactNode;
+  className?: string;
+  calendarProps?: DayPickerProps;
+}

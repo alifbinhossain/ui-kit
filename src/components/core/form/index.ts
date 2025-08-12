@@ -17,6 +17,9 @@ import Switch from './switch';
 import Otp from './otp';
 import Gender from './gender';
 import Phone from './phone';
+import ReactSelectCreate from './react-select-create';
+import DateTimePicker from './date-time-picker';
+import ID from './id';
 
 const Form = {
   Input,
@@ -38,6 +41,9 @@ const Form = {
   Otp,
   Gender,
   Phone,
+  ReactSelectCreate,
+  DateTimePicker,
+  ID,
 };
 
 export default Form;
