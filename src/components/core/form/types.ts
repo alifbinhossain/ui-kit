@@ -73,3 +73,10 @@ export interface FormReactSelectProps extends IFieldProps {
   isLoading?: boolean;
   onChange?: (option?: any, field?: any) => void;
 }
+
+export interface IFormSectionProps {
+  title?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+  extraHeader?: React.ReactNode;
+}

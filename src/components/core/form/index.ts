@@ -7,11 +7,13 @@ import Radio from './radio';
 import Select from './select';
 import MultiSelect from './multi-select';
 import ReactSelect from './react-select';
+import Section from './section';
 
 const Form = {
   Input,
   Textarea,
   Submit,
+  Section,
   Checkbox,
   DatePicker,
   Radio,
