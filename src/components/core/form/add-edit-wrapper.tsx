@@ -22,7 +22,7 @@ const FormAddEditWrapper: React.FC<IFormAddEditWrapperProps> = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 w-full'>
         {children}
         <CoreForm.Submit
           className='w-full'

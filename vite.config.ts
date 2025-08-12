@@ -97,6 +97,7 @@ export default defineConfig({
         'react-dropzone',
         'handsontable',
         '@handsontable/react',
+        'react-quill-new',
       ],
       output: {
         preserveModules: true,
@@ -125,6 +126,7 @@ export default defineConfig({
           'react-dropzone': 'ReactDropzone',
           handsontable: 'Handsontable',
           '@handsontable/react': 'HandsontableReact',
+          'react-quill-new': 'ReactQuillNew',
         },
       },
     },
