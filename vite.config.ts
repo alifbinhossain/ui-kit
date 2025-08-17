@@ -39,6 +39,7 @@ export default defineConfig({
         // It will also be responsible for importing the main CSS file.
         index: path.resolve(__dirname, 'src/index.ts'),
         form: path.resolve(__dirname, 'src/components/core/form/index.ts'),
+        modal: path.resolve(__dirname, 'src/components/core/modal/index.ts'),
         // Use glob to find all other components as separate entry points.
         // This ensures deep imports are possible (e.g., `import { Button } from 'my-lib/components/ui/button'`).
         ...Object.fromEntries(
