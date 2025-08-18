@@ -8,6 +8,8 @@
     "noEmit": false,
     "rootDir": "src",
     "isolatedModules": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

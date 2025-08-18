@@ -8,6 +8,36 @@ import { glob } from 'glob';
 
 import { visualizer } from 'rollup-plugin-visualizer';
 
+import pkg from './package.json'; // Import your package.json
+
+/**
+ * Converts a package name to a PascalCase string for UMD globals.
+ * @param {string} name - The package name.
+ * @returns {string} The PascalCase version of the name.
+ */
+function toPascalCase(name: string): string {
+  // Handle scoped packages
+  const scopeRemoved = name.replace(/^@.*\//, '');
+  // Handle special cases
+  if (scopeRemoved === 'react') return 'React';
+  if (scopeRemoved === 'react-dom') return 'ReactDOM';
+  if (scopeRemoved === 'js-cookie') return 'Cookies';
+
+  return scopeRemoved
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
+}
+
+// Generate the globals object from peerDependencies
+const globals = Object.keys(pkg.peerDependencies || {}).reduce(
+  (acc: Record<string, string>, key) => {
+    acc[key] = toPascalCase(key);
+    return acc;
+  },
+  {} as Record<string, string>
+);
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -38,8 +68,18 @@ export default defineConfig({
         // The main 'index' entry point, which will be the barrel export for the library.
         // It will also be responsible for importing the main CSS file.
         index: path.resolve(__dirname, 'src/index.ts'),
+        providers: path.resolve(__dirname, 'src/providers/index.ts'),
         form: path.resolve(__dirname, 'src/components/core/form/index.ts'),
         modal: path.resolve(__dirname, 'src/components/core/modal/index.ts'),
+        'data-table': path.resolve(
+          __dirname,
+          'src/components/core/data-table/index.tsx'
+        ),
+        'data-table-ssr': path.resolve(
+          __dirname,
+          'src/components/core/data-table-ssr/index.tsx'
+        ),
+
         // Use glob to find all other components as separate entry points.
         // This ensures deep imports are possible (e.g., `import { Button } from 'my-lib/components/ui/button'`).
         ...Object.fromEntries(
@@ -90,22 +130,9 @@ export default defineConfig({
     rollupOptions: {
       // Externalize peer dependencies to avoid bundling them.
       external: [
-        'react',
-        'react-dom',
-        '@tanstack/react-query',
-        'react-hook-form',
-        'axios',
-        '@hookform/devtools',
-        '@headlessui/react',
-        'lucide-react',
-        'framer-motion',
-        'react-hotkeys-hook',
-        'date-fns',
-        'zod',
-        'react-dropzone',
-        'handsontable',
-        '@handsontable/react',
-        'react-quill-new',
+        ...Object.keys(pkg.peerDependencies || {}),
+        /^react\/.+$/,
+        /^react-dom\/.+$/,
       ],
       output: {
         preserveModules: true,
@@ -117,24 +144,7 @@ export default defineConfig({
           return 'assets/[name]-[hash][extname]';
         },
         // Provide global variables for these external dependencies.
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          '@tanstack/react-query': 'ReactQuery',
-          'react-hook-form': 'ReactHookForm',
-          axios: 'axios',
-          '@hookform/devtools': 'ReactHookFormDevTools',
-          '@headlessui/react': 'HeadlessUIReact',
-          'lucide-react': 'LucideReact',
-          'framer-motion': 'FramerMotion',
-          'react-hotkeys-hook': 'ReactHotkeysHook',
-          'date-fns': 'dateFns',
-          zod: 'zod',
-          'react-dropzone': 'ReactDropzone',
-          handsontable: 'Handsontable',
-          '@handsontable/react': 'HandsontableReact',
-          'react-quill-new': 'ReactQuillNew',
-        },
+        globals,
       },
     },
     emptyOutDir: true,
