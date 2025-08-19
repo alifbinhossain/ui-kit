@@ -1,8 +1,11 @@
+import type { IRoute } from '@/types';
 import { createContext, useMemo } from 'react';
 
 export interface IAppContext {
+  companyTitle: string;
   apiBaseUrl: string;
   imageApiBaseUrl: string;
+  sidebarRoutes: IRoute[];
 }
 
 export const AppContext = createContext<IAppContext | undefined>(undefined);
@@ -11,13 +14,23 @@ const AppProvider: React.FC<{
   children: React.ReactNode;
   apiBaseUrl: string;
   imageApiBaseUrl: string;
-}> = ({ children, apiBaseUrl, imageApiBaseUrl }) => {
+  sidebarRoutes: IRoute[];
+  companyTitle: string;
+}> = ({
+  children,
+  apiBaseUrl,
+  imageApiBaseUrl,
+  sidebarRoutes,
+  companyTitle,
+}) => {
   const value = useMemo(
     (): IAppContext => ({
       apiBaseUrl,
       imageApiBaseUrl,
+      sidebarRoutes,
+      companyTitle,
     }),
-    [apiBaseUrl, imageApiBaseUrl]
+    [apiBaseUrl, imageApiBaseUrl, sidebarRoutes, companyTitle]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

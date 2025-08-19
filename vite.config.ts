@@ -69,6 +69,8 @@ export default defineConfig({
         // It will also be responsible for importing the main CSS file.
         index: path.resolve(__dirname, 'src/index.ts'),
         providers: path.resolve(__dirname, 'src/providers/index.ts'),
+        layout: path.resolve(__dirname, 'src/components/layout/index.tsx'),
+        login: path.resolve(__dirname, 'src/components/auth/login/index.tsx'),
         form: path.resolve(__dirname, 'src/components/core/form/index.ts'),
         modal: path.resolve(__dirname, 'src/components/core/modal/index.ts'),
         'data-table': path.resolve(

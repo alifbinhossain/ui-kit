@@ -1,3 +1,5 @@
+import type { RouteObject } from 'react-router-dom';
+
 export type IToast = {
   status: number;
   type:
@@ -108,3 +110,39 @@ type ITableFilterOptionSSROthers = {
 // type: 'select' | 'checkbox' | 'radio' | 'date-range' | 'date' | 'text';
 export type ITableFilterOptionSSR<T> = ITableFilterOptionSSRDefault<T> &
   (ITableFilterOptionSSRSelect | ITableFilterOptionSSROthers);
+
+export type IUser = {
+  uuid: string;
+  name: string;
+  department: string;
+  employee_uuid: string;
+  user_type: 'employee' | 'customer' | 'vendor';
+};
+
+export type IAuthResponse = {
+  status: number;
+  type: string;
+  message: string;
+  token: string;
+  user: IUser;
+  can_access: { [key: string]: string };
+};
+
+export type IRoute = RouteObject & {
+  name: string;
+  children?: IRoute[];
+  hidden?: boolean;
+  page_name?: string;
+  actions?: string[];
+  disableCollapse?: boolean;
+  page_type?: {
+    type: 'library' | 'entry' | 'update' | 'normal' | 'custom';
+    name: string;
+  };
+};
+
+export type IParams = {
+  start_date?: Date | string | undefined;
+  end_date?: Date | string | undefined;
+  status?: boolean | undefined;
+};
