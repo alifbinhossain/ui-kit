@@ -1,5 +1,6 @@
 import type { IRoute } from '@/types';
 import { createContext, useMemo } from 'react';
+// import { Toaster } from 'sonner';
 
 export interface IAppContext {
   companyTitle: string;
@@ -33,7 +34,12 @@ const AppProvider: React.FC<{
     [apiBaseUrl, imageApiBaseUrl, sidebarRoutes, companyTitle]
   );
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={value}>
+      {children}
+      {/* <Toaster richColors position={'top-center'} expand={true} /> */}
+    </AppContext.Provider>
+  );
 };
 
 export default AppProvider;

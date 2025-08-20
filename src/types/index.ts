@@ -1,3 +1,5 @@
+import type { UseMutationResult } from '@tanstack/react-query';
+import type { AxiosError } from 'axios';
 import type { RouteObject } from 'react-router-dom';
 
 export type IToast = {
@@ -146,3 +148,35 @@ export type IParams = {
   end_date?: Date | string | undefined;
   status?: boolean | undefined;
 };
+
+export type IStatus = 'pending' | 'approved' | 'rejected';
+
+export interface IDefaultAddOrUpdateProps {
+  url: string;
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
+  setUpdatedData?: React.Dispatch<React.SetStateAction<any | null>>;
+  postData: UseMutationResult<
+    IToast,
+    AxiosError<IToast, any>,
+    {
+      url: string;
+      newData: any;
+      isOnCloseNeeded?: boolean;
+      onClose?: (() => void) | undefined;
+    },
+    any
+  >;
+  updateData: UseMutationResult<
+    IToast,
+    AxiosError<IToast, any>,
+    {
+      url: string;
+      updatedData: any;
+      isOnCloseNeeded?: boolean;
+      onClose?: (() => void) | undefined;
+    },
+    any
+  >;
+}

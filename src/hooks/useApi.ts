@@ -4,6 +4,7 @@ import useApp from './useApp';
 
 export const useApi = ({ contentType }: { contentType: AxiosHeaderValue }) => {
   const { apiBaseUrl } = useApp();
+
   const api = axios.create({
     baseURL: apiBaseUrl,
     headers: { 'Content-Type': contentType },

@@ -24,6 +24,10 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index"
     },
+    "./types": {
+      "types": "./dist/types/types/index.d.ts",
+      "import": "./dist/types/types/index.d"
+    },
     "./providers": {
       "types": "./dist/types/providers/index.d.ts",
       "import": "./dist/providers"
@@ -56,6 +60,10 @@
       "types": "./dist/types/components/ui/*.d.ts",
       "import": "./dist/components/ui/*.js"
     },
+    "./buttons/*": {
+      "types": "./dist/types/components/buttons/*.d.ts",
+      "import": "./dist/components/buttons/*.js"
+    },
     "./hooks/*": {
       "types": "./dist/types/hooks/*.d.ts",
       "import": "./dist/hooks/*.js"
@@ -64,18 +72,24 @@
       "types": "./dist/types/utils/*.d.ts",
       "import": "./dist/utils/*.js"
     },
+    "./lib/*": {
+      "types": "./dist/types/lib/*.d.ts",
+      "import": "./dist/lib/*.js"
+    },
     "./style.css": {
       "import": "./dist/style.css"
     }
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run build:types",
+    "build": "rm -rf node_modules && pnpm install && vite build && npm run build:types",
     "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly --outDir dist/types",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "peerDependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "@handsontable/react": "14.6.1",
     "@headlessui/react": "^2.2.7",
     "@hookform/devtools": "^4.4.0",
@@ -90,10 +104,8 @@
     "handsontable": "^14.6.1",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.536.0",
-    "react": "^19.1.1",
     "react-csv": "^2.2.2",
     "react-day-picker": "^9.8.1",
-    "react-dom": "^19.1.1",
     "react-dropzone": "^14.3.8",
     "react-hook-form": "^7.62.0",
     "react-hotkeys-hook": "^5.1.0",

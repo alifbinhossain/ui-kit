@@ -16,6 +16,8 @@ const Login = () => {
     }
   }, [signed, user, navigate]);
 
+  // return <div>Login Page</div>;
+
   return (
     <div className='flex min-h-screen min-w-max flex-col justify-center bg-background py-6 sm:py-12'>
       <div className='relative min-w-[40%] py-3 sm:mx-auto sm:max-w-xl'>

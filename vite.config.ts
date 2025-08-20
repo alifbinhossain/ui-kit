@@ -98,6 +98,18 @@ export default defineConfig({
 
         ...Object.fromEntries(
           glob
+            .sync('src/components/buttons/**/*.tsx')
+            .map((file) => [
+              path.relative(
+                'src',
+                file.slice(0, file.length - path.extname(file).length)
+              ),
+              file,
+            ])
+        ),
+
+        ...Object.fromEntries(
+          glob
             .sync('src/hooks/**/*.ts')
             .map((file) => [
               path.relative(
@@ -110,7 +122,19 @@ export default defineConfig({
 
         ...Object.fromEntries(
           glob
-            .sync('src/utils/**/*.ts')
+            .sync('src/utils/**/*.{ts,tsx}')
+            .map((file) => [
+              path.relative(
+                'src',
+                file.slice(0, file.length - path.extname(file).length)
+              ),
+              file,
+            ])
+        ),
+
+        ...Object.fromEntries(
+          glob
+            .sync('src/lib/**/*.ts')
             .map((file) => [
               path.relative(
                 'src',
