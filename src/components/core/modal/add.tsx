@@ -8,9 +8,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useHotkeys } from 'react-hotkeys-hook';
 
+import CoreForm from '@/components/core/form';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
-import CoreForm from '@/components/core/form';
 
 import { DevTool } from '@/lib/react-hook-devtool';
 import { cn } from '@/lib/utils';

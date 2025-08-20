@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 
-import type { IFilterProps } from '../../../types';
 import DebouncedInput from '@/components/ui/debounce-input';
+
+import type { IFilterProps } from '../../../types';
 
 function NumberFilter<TData, TValue>({
   column,

@@ -1,11 +1,12 @@
-import 'handsontable/dist/handsontable.full.min.css';
-
 import { createRef, type RefObject } from 'react';
+
 import { BaseEditorComponent } from '@handsontable/react';
 import Handsontable from 'handsontable';
+import 'handsontable/dist/handsontable.full.min.css';
 
 import { Input } from '@/components/ui/input';
 import ReactSelect from '@/components/ui/react-select';
+
 import type { FieldDef } from '../../types';
 
 interface ICustomEditorProps {

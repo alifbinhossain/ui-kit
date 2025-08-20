@@ -11,7 +11,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 
-import type { IDeleteModalProps } from '../types';
+import type { IDeleteModalProps } from './types';
 
 const DeleteModal: React.FC<IDeleteModalProps> = ({
   deleteItem,

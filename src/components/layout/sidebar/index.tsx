@@ -1,6 +1,5 @@
-import { useMediaQuery } from '@uidotdev/usehooks';
-
 import { SidebarProvider } from '@/providers';
+import { useMediaQuery } from '@uidotdev/usehooks';
 
 import SidebarDesktop from './desktop';
 import SidebarMobile from './mobile';

@@ -1,7 +1,8 @@
 import { Trash2 } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
 import useTable from '@/hooks/useTable';
+
+import { Button } from '@/components/ui/button';
 
 export function TableRowDelete() {
   const { table, handleDeleteAll } = useTable();

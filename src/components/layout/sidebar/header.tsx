@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
 import { CopyMinus, X } from 'lucide-react';
 
-import { buttonVariants } from '@/components/ui/button';
-
-import Search from './search';
+import useApp from '@/hooks/useApp';
 import useLayout from '@/hooks/useLayout';
 import useSidebar from '@/hooks/useSidebar';
+
 import BrandLogo from '@/components/ui/brand-logo';
+import { buttonVariants } from '@/components/ui/button';
 import TooltipWrapper from '@/components/ui/tooltip-wrapper';
-import useApp from '@/hooks/useApp';
+
+import Search from './search';
 
 const SidebarHeader = () => {
   const { companyTitle } = useApp();

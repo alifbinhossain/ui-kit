@@ -1,13 +1,15 @@
 import { useLocation } from 'react-router-dom';
 
+import useApp from '@/hooks/useApp';
+import useLayout from '@/hooks/useLayout';
+
+import BrandLogo from '@/components/ui/brand-logo';
+import GlobalBreadcrumbs from '@/components/ui/global-breadcrumbs';
+
 import { cn } from '@/lib/utils';
 
 import SidebarCollapse from '../sidebar/collapse';
 import SidebarMobileToggle from '../sidebar/mobile/toggle';
-import GlobalBreadcrumbs from '@/components/ui/global-breadcrumbs';
-import BrandLogo from '@/components/ui/brand-logo';
-import useLayout from '@/hooks/useLayout';
-import useApp from '@/hooks/useApp';
 
 const Navbar = () => {
   const { companyTitle } = useApp();

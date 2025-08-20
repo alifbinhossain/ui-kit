@@ -1,5 +1,7 @@
 import { createContext, useEffect, useMemo } from 'react';
 
+import useAccess from '@/hooks/useAccess';
+
 export interface IPageContext {
   pageName: string;
   readAccess: boolean;
@@ -14,19 +16,19 @@ interface IPageProviderProps {
   pageName: string;
   pageTitle: string;
   children: React.ReactNode;
-  access: string[];
 }
 
 const PageProvider: React.FC<IPageProviderProps> = ({
   children,
   pageName,
   pageTitle,
-  access,
 }) => {
-  const readAccess = access.includes('read');
-  const createAccess = access.includes('create');
-  const updateAccess = access.includes('update');
-  const deleteAccess = access.includes('delete');
+  const pageAccess = useAccess(pageName) as string[];
+
+  const readAccess = pageAccess.includes('read');
+  const createAccess = pageAccess.includes('create');
+  const updateAccess = pageAccess.includes('update');
+  const deleteAccess = pageAccess.includes('delete');
 
   useEffect(() => {
     document.title = pageTitle;

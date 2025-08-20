@@ -1,5 +1,6 @@
 import React from 'react';
 
+import CoreForm from '@/components/core/form';
 import { FormField } from '@/components/ui/form';
 import { Skeleton } from '@/components/ui/skeleton';
 import {
@@ -10,7 +11,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import CoreForm from '@/components/core/form';
 
 import { cn } from '@/lib/utils';
 

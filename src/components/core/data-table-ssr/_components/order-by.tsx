@@ -2,6 +2,7 @@ import { DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
 import type { Table } from '@tanstack/react-table';
 import { ArrowDownAZ, ArrowDownZA, ChevronsUpDown } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
+
 import useTableSSR from '@/hooks/useTableSSR';
 
 import { Button } from '@/components/ui/button';

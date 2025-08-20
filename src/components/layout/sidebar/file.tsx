@@ -1,12 +1,13 @@
 import { type IRoute } from '@/types';
+import matchUrl from '@/utils/routes/matchUrl';
 import { motion } from 'framer-motion';
 import { NavLink, useLocation } from 'react-router-dom';
+
+import useLayout from '@/hooks/useLayout';
 
 import { Badge } from '@/components/ui/badge';
 
 import { cn } from '@/lib/utils';
-import useLayout from '@/hooks/useLayout';
-import matchUrl from '@/utils/routes/matchUrl';
 
 const variants = {
   animate: {

@@ -1,5 +1,8 @@
 import { useState } from 'react';
+
+import type { AxiosError } from 'axios';
 import { RotateCw } from 'lucide-react';
+
 // import useTable from '@/hooks/useTable';
 
 import {
@@ -17,8 +20,7 @@ import { Label } from '@/components/ui/label';
 
 import { cn } from '@/lib/utils';
 
-import type { IDeleteAllModalProps } from '../types';
-import type { AxiosError } from 'axios';
+import type { IDeleteAllModalProps } from './types';
 
 const DeleteAllModal: React.FC<IDeleteAllModalProps> = ({
   deleteItems,

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { TableContextSSR } from '@/providers/table-provider-ssr';
 
 const useTableSSR = () => {

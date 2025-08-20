@@ -1,9 +1,11 @@
 import type { ColumnDef } from '@tanstack/react-table';
+
 import usePage from '@/hooks/usePage';
 
-import TableCellAction from '../_components/cell-action';
-import HoverCardWrapper from '@/components/ui/hover-card-wrapper';
 import DateTime from '@/components/ui/date-time';
+import HoverCardWrapper from '@/components/ui/hover-card-wrapper';
+
+import TableCellAction from '../_components/cell-action';
 
 interface IDefaultColumns {
   isSSR?: boolean;

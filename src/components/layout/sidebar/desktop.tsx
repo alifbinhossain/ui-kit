@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 
-import SidebarContent from './content';
 import useLayout from '@/hooks/useLayout';
+
+import SidebarContent from './content';
 
 const SidebarDesktop = () => {
   const { isCollapsed } = useLayout();

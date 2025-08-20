@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import type { IResponse } from '@/types';
 import type {
   QueryObserverResult,
@@ -8,9 +9,9 @@ import { RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { Button } from '@/components/ui/button';
+import TooltipWrapper from '@/components/ui/tooltip-wrapper';
 
 import { cn } from '@/lib/utils';
-import TooltipWrapper from '@/components/ui/tooltip-wrapper';
 
 interface TableRefreshProps {
   handleRefetch: (

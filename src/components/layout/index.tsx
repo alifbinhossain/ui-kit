@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 
+import { LayoutProvider } from '@/providers';
 import { Outlet } from 'react-router-dom';
 
 import Navbar from './navbar';
 import Sidebar from './sidebar';
-import { LayoutProvider } from '@/providers';
 
 const Layout = () => {
   return (

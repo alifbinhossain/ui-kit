@@ -5,6 +5,7 @@ import {
   ChevronsRight,
 } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
+
 import useTableSSR from '@/hooks/useTableSSR';
 
 import PaginateButtons from '@/components/core/data-table/_helpers/paginate-buttons';

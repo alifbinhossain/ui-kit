@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+
 import type { IToolbarOptions } from '@/types';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import { isValid } from 'date-fns';
@@ -9,6 +10,7 @@ import {
   SearchIcon,
   X,
 } from 'lucide-react';
+
 import usePage from '@/hooks/usePage';
 import useTable from '@/hooks/useTable';
 

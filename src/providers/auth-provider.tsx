@@ -5,12 +5,14 @@ import {
   useMemo,
   useState,
 } from 'react';
+
 import type { IAuthResponse, IUser } from '@/types';
 import { toast } from 'sonner';
 
+import { useApi } from '@/hooks/useApi';
 import useCookie from '@/hooks/useCookie';
 import { useLocalStorage } from '@/hooks/useStorage';
-import { useApi } from '@/hooks/useApi';
+
 import type { ILoginData } from '@/components/auth/login/schema';
 
 // Define the AuthContext interface with state and functions

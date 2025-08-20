@@ -1,8 +1,9 @@
 import { type IRoute } from '@/types';
 import { Search as SearchIcon } from 'lucide-react';
 
-import DebouncedInput from '@/components/ui/debounce-input';
 import useSidebar from '@/hooks/useSidebar';
+
+import DebouncedInput from '@/components/ui/debounce-input';
 
 const Search = () => {
   const { setRoutes, setOpenRoutes, setIsCloseAll, sidebarRoutes } =

@@ -3,11 +3,11 @@ import type {
   ITableFilterOptionSSRSelectDynamic,
 } from '@/types';
 
+import useTableFilter from '@/hooks/useTableFilter';
 import useTQuery from '@/hooks/useTQuery';
 
 import type { IFormSelectOption } from '@/components/core/form/types';
 import ReactSelectAsync from '@/components/ui/react-select/react-select-async';
-import useTableFilter from '@/hooks/useTableFilter';
 
 function DynamicSelect<T>({
   accessor,

@@ -1,4 +1,5 @@
 import type { ITableFilterOptionSSR } from '@/types';
+
 import useTableFilter from '@/hooks/useTableFilter';
 
 import DebouncedInput from '@/components/ui/debounce-input';

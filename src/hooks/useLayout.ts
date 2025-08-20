@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { LayoutContext } from '@/providers/layout-provider';
 
 const useLayout = () => {

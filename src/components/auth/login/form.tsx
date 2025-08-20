@@ -1,9 +1,10 @@
-import { Form, FormField } from '@/components/ui/form';
-import CoreForm from '@/components/core/form';
-
-import { type ILoginData, LOGIN_NULL, LOGIN_SCHEMA } from './schema';
 import useAuth from '@/hooks/useAuth';
 import useRHF from '@/hooks/useRHF';
+
+import CoreForm from '@/components/core/form';
+import { Form, FormField } from '@/components/ui/form';
+
+import { type ILoginData, LOGIN_NULL, LOGIN_SCHEMA } from './schema';
 
 const LoginForm = () => {
   const { login } = useAuth();

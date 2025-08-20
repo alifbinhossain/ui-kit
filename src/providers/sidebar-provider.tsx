@@ -1,6 +1,8 @@
 import { createContext, useMemo, useState } from 'react';
+
 import { type IRoute } from '@/types';
 import { useLocation } from 'react-router-dom';
+
 import useApp from '@/hooks/useApp';
 
 export interface ISidebarContext {

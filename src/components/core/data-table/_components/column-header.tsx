@@ -3,9 +3,9 @@ import {
   ChevronsUpDown,
   ChevronUp,
   EyeOff,
-  Search,
   Pin,
   PinOff,
+  Search,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';

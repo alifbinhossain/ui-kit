@@ -1,8 +1,11 @@
 import { useCallback } from 'react';
 
+import { TableFilterProvider } from '@/providers';
+import type { ITableFilter } from '@/providers/table-filter-provider';
 import { isValid } from 'date-fns';
 import { CirclePlus, X } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
+
 import usePage from '@/hooks/usePage';
 import useTableSSR from '@/hooks/useTableSSR';
 
@@ -14,13 +17,11 @@ import { cn } from '@/lib/utils';
 import TableDateRange from '../../data-table/_components/date-range';
 import TableExportCSV from '../../data-table/_components/export-csv';
 import TableRefresh from '../../data-table/_components/refresh';
+import TableTitle from '../../data-table/_components/title';
 import { TableViewOptions } from '../../data-table/_components/view-options';
 import TableFilter from './filter';
 import PinFilters from './filter/pin-filters';
 import { TableOrderBy } from './order-by';
-import { TableFilterProvider } from '@/providers';
-import type { ITableFilter } from '@/providers/table-filter-provider';
-import TableTitle from '../../data-table/_components/title';
 
 const Toolbar = () => {
   const { createAccess } = usePage();

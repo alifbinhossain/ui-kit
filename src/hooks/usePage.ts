@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { PageContext } from '@/providers/page-provider';
 
 const usePage = () => {

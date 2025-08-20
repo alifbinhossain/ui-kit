@@ -1,5 +1,6 @@
 import axios, { type AxiosHeaderValue } from 'axios';
 import Cookies from 'js-cookie';
+
 import useApp from './useApp';
 
 export const useApi = ({ contentType }: { contentType: AxiosHeaderValue }) => {

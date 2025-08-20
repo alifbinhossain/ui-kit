@@ -1,5 +1,7 @@
-import type { IRoute } from '@/types';
 import { createContext, useMemo } from 'react';
+
+import type { IRoute } from '@/types';
+
 // import { Toaster } from 'sonner';
 
 export interface IAppContext {

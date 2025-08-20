@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+
 import Cookies from 'js-cookie';
 
 export default function useCookie(name: string, defaultValue = '') {

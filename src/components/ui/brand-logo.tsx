@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-import { cn } from '@/lib/utils';
 import useApp from '@/hooks/useApp';
+
+import { cn } from '@/lib/utils';
 
 interface IBrandLogoProps {
   className?: string;

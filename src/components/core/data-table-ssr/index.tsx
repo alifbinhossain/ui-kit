@@ -1,4 +1,5 @@
 import { flexRender } from '@tanstack/react-table';
+
 import useTableSSR from '@/hooks/useTableSSR';
 
 import { TableColumnHeader } from '@/components/core/data-table/_components/column-header';

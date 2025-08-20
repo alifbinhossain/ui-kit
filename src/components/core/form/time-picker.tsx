@@ -1,3 +1,4 @@
+import { formatDate } from '@/utils/formatDate';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 
@@ -16,7 +17,6 @@ import {
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 import { cn } from '@/lib/utils';
-import { formatDate } from '@/utils/formatDate';
 
 import type { FormDatePickerProps } from './types';
 

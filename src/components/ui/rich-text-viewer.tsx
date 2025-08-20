@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactQuill from 'react-quill-new';
 
+import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.bubble.css';
 
 const RichTextViewer: React.FC<{ content: string }> = ({ content }) => {

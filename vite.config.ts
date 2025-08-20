@@ -1,14 +1,15 @@
 // vite.config.ts
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import path from 'path';
-import dts from 'vite-plugin-dts';
+import react from '@vitejs/plugin-react';
 import { glob } from 'glob';
-
+import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
-import pkg from './package.json'; // Import your package.json
+import pkg from './package.json';
+
+// Import your package.json
 
 /**
  * Converts a package name to a PascalCase string for UMD globals.
@@ -72,7 +73,6 @@ export default defineConfig({
         layout: path.resolve(__dirname, 'src/components/layout/index.tsx'),
         login: path.resolve(__dirname, 'src/components/auth/login/index.tsx'),
         form: path.resolve(__dirname, 'src/components/core/form/index.ts'),
-        modal: path.resolve(__dirname, 'src/components/core/modal/index.ts'),
         'data-table': path.resolve(
           __dirname,
           'src/components/core/data-table/index.tsx'
@@ -99,6 +99,18 @@ export default defineConfig({
         ...Object.fromEntries(
           glob
             .sync('src/components/buttons/**/*.tsx')
+            .map((file) => [
+              path.relative(
+                'src',
+                file.slice(0, file.length - path.extname(file).length)
+              ),
+              file,
+            ])
+        ),
+
+        ...Object.fromEntries(
+          glob
+            .sync('src/components/core/modal/**/*.tsx')
             .map((file) => [
               path.relative(
                 'src',

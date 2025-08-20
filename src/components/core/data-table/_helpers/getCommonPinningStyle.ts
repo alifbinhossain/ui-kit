@@ -1,6 +1,5 @@
-import { type Column } from '@tanstack/react-table';
-
 import { colors } from '@/config/tailwind';
+import { type Column } from '@tanstack/react-table';
 
 export function getCommonPinningStyles<TData>({
   column,
@@ -25,8 +24,8 @@ export function getCommonPinningStyles<TData>({
     boxShadow: isLastLeftPinnedColumn
       ? `-4px 0 3px -3px ${colors.BORDER}  inset`
       : isFirstRightPinnedColumn
-      ? `4px 0 3px -3px ${colors.BORDER}  inset`
-      : undefined,
+        ? `4px 0 3px -3px ${colors.BORDER}  inset`
+        : undefined,
     left: isPinned === 'left' ? `${column.getStart('left')}px` : undefined,
     right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
     opacity: isPinned ? 0.95 : 1,

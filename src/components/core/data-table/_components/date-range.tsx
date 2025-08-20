@@ -1,9 +1,10 @@
 import { format } from 'date-fns';
 
+import useTableSSR from '@/hooks/useTableSSR';
+
 import { DateRangePicker } from '@/components/ui/date-range-picker';
 
 import type { TTableDateRange } from '../types';
-import useTableSSR from '@/hooks/useTableSSR';
 
 const TableDateRange = ({
   start_date,

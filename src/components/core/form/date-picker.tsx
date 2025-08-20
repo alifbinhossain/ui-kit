@@ -1,4 +1,6 @@
 import { useState } from 'react';
+
+import { formatDate } from '@/utils/formatDate';
 import { format } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 
@@ -17,7 +19,6 @@ import {
 } from '@/components/ui/popover';
 
 import { cn } from '@/lib/utils';
-import { formatDate } from '@/utils/formatDate';
 
 import type { FormDatePickerProps } from './types';
 

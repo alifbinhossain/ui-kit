@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+
 import type {
   IPagination,
   IPaginationQuery,
@@ -37,9 +38,10 @@ import { useSearchParams } from 'react-router-dom';
 
 import DataTableSSR from '@/components/core/data-table-ssr';
 import { TableRowSelection } from '@/components/core/data-table/_components/row/selection';
-import { fuzzyFilter } from '@/components/core/data-table/_helpers/fuzzyFilter';
 import { dateRange } from '@/components/core/data-table/_helpers/dateRange';
+import { fuzzyFilter } from '@/components/core/data-table/_helpers/fuzzyFilter';
 import useDefaultColumns from '@/components/core/data-table/_helpers/useDefaultColumns';
+
 // import { TableRowSelection } from '@core/data-table/_components/row/selection';
 // import { dateRange } from '@core/data-table/_helpers/dateRange';
 // import { fuzzyFilter } from '@core/data-table/_helpers/fuzzyFilter';

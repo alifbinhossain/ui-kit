@@ -1,8 +1,10 @@
 import { useMemo } from 'react';
+
 import { max, min } from 'date-fns';
 
-import type { IFilterProps } from '../../../types';
 import { DateRangePicker } from '@/components/ui/date-range-picker';
+
+import type { IFilterProps } from '../../../types';
 
 function DateFilter<TData, TValue>({
   column,

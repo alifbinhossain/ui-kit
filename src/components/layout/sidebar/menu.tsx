@@ -1,7 +1,8 @@
 import { File } from 'lucide-react';
 
-import SidebarItem from './item';
 import useSidebar from '@/hooks/useSidebar';
+
+import SidebarItem from './item';
 
 const SidebarMenu = () => {
   const { routes } = useSidebar();

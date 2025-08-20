@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState, type FC } from 'react';
+import React, { type FC, useEffect, useRef, useState } from 'react';
+
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 
@@ -16,8 +17,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from './select';
-import { Switch } from './switch';
 import SingleDatePicker from './single-date-picker';
+import { Switch } from './switch';
 
 export interface DateRangePickerProps {
   /** Click handler for applying updates from DateRangePicker */
@@ -280,8 +281,8 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
           ? getDateAdjustedForTimezone(initialDateTo)
           : initialDateTo
         : typeof initialDateFrom === 'string'
-        ? getDateAdjustedForTimezone(initialDateFrom)
-        : initialDateFrom,
+          ? getDateAdjustedForTimezone(initialDateFrom)
+          : initialDateFrom,
     });
     setRangeCompare(
       initialCompareFrom
@@ -295,8 +296,8 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
                 ? getDateAdjustedForTimezone(initialCompareTo)
                 : initialCompareTo
               : typeof initialCompareFrom === 'string'
-              ? getDateAdjustedForTimezone(initialCompareFrom)
-              : initialCompareFrom,
+                ? getDateAdjustedForTimezone(initialCompareFrom)
+                : initialCompareFrom,
           }
         : undefined
     );

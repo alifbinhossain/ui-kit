@@ -1,5 +1,7 @@
 import { SlidersHorizontal, X } from 'lucide-react';
 
+import useTable from '@/hooks/useTable';
+
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
@@ -13,7 +15,6 @@ import {
 } from '@/components/ui/sheet';
 
 import TableColumnFilter from './column';
-import useTable from '@/hooks/useTable';
 
 const TableAllFilter = () => {
   const { table } = useTable();

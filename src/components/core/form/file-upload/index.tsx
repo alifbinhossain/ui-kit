@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+
 import { Repeat } from 'lucide-react';
 import { type Accept, useDropzone } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
@@ -37,24 +38,24 @@ const FormFileUpload: React.FC<FormFileUploadProps> = ({
     fileType === 'image'
       ? { 'image/*': ['.jpeg', '.jpg', '.png', '.svg', '.webp'] }
       : fileType === 'video'
-      ? { 'video/*': ['.mp4', '.mov', '.wmv', '.flv', '.avi'] }
-      : fileType === 'audio'
-      ? { 'audio/*': ['.mp3', '.wav', '.ogg'] }
-      : fileType === 'document'
-      ? {
-          'application/*': [
-            '.pdf',
-            '.doc',
-            '.docx',
-            '.xls',
-            '.xlsx',
-            '.ppt',
-            '.pptx',
-          ],
-        }
-      : fileType === 'all'
-      ? {}
-      : {};
+        ? { 'video/*': ['.mp4', '.mov', '.wmv', '.flv', '.avi'] }
+        : fileType === 'audio'
+          ? { 'audio/*': ['.mp3', '.wav', '.ogg'] }
+          : fileType === 'document'
+            ? {
+                'application/*': [
+                  '.pdf',
+                  '.doc',
+                  '.docx',
+                  '.xls',
+                  '.xlsx',
+                  '.ppt',
+                  '.pptx',
+                ],
+              }
+            : fileType === 'all'
+              ? {}
+              : {};
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {

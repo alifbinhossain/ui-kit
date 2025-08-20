@@ -1,6 +1,7 @@
 import type { ITableFilterOptionSSR } from '@/types';
 import { Pin } from 'lucide-react';
 import { toast } from 'sonner';
+
 import useTableSSR from '@/hooks/useTableSSR';
 
 import { Button } from '@/components/ui/button';
