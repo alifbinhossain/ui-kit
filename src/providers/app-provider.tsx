@@ -1,8 +1,7 @@
 import { createContext, useMemo } from 'react';
 
 import type { IRoute } from '@/types';
-
-// import { Toaster } from 'sonner';
+import { Toaster } from 'sonner';
 
 export interface IAppContext {
   companyTitle: string;
@@ -39,7 +38,7 @@ const AppProvider: React.FC<{
   return (
     <AppContext.Provider value={value}>
       {children}
-      {/* <Toaster richColors position={'top-center'} expand={true} /> */}
+      <Toaster richColors position={'top-center'} expand={true} />
     </AppContext.Provider>
   );
 };
